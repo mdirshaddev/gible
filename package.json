@@ -5,5 +5,15 @@
   "type": "commonjs",
   "repository": "https://github.com/mdirshaddev/gible.git",
   "author": "Md Irshad <mdirshaddev+github@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "next": "^12.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.3",
+    "@types/react": "^18.0.21",
+    "typescript": "^4.8.4"
+  }
 }
