@@ -1,0 +1,9 @@
+{
+  "name": "gible",
+  "version": "1.0.0",
+  "description": "A Github Analytics Dashboard Web App build with NextJS and Material UI",
+  "type": "commonjs",
+  "repository": "https://github.com/mdirshaddev/gible.git",
+  "author": "Md Irshad <mdirshaddev+github@gmail.com>",
+  "license": "MIT"
+}
