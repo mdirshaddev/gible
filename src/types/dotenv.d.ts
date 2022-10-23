@@ -2,6 +2,6 @@
 
 declare namespace NodeJS {
 	interface ProcessEnv {
-		GITHUB_SECRET_TOKEN: string;
+		NEXT_PUBLIC_GITHUB_SECRET_TOKEN: string;
 	}
 }
