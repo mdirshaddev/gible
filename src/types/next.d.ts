@@ -1,10 +1,11 @@
-import type { CompletePrivateRouteInfo } from 'next/dist/shared/lib/router/router';
-import type { Router } from 'next/dist/client/router';
+import type { CompletePrivateRouteInfo } from "next/dist/shared/lib/router/router";
+import type { Router } from "next/dist/client/router";
+import type { EmotionCache } from "@emotion/react";
 
-declare module 'next/app' {
+declare module "next/app" {
 	export declare type AppProps = Pick<
 		CompletePrivateRouteInfo,
-		'Component' | 'err'
+		"Component" | "err"
 	> & {
 		router: Router;
 	} & Record<string, any> & {
@@ -12,5 +13,6 @@ declare module 'next/app' {
 				// eslint-disable-next-line no-unused-vars
 				getLayout?: (page: JSX.Element) => JSX.Element;
 			};
+			emotionCache?: EmotionCache;
 		};
 }

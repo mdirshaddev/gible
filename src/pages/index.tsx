@@ -1,14 +1,37 @@
-import Layout from 'components/utilities/Layout';
-import type { NextPageWithLayout } from 'next';
-import React, { ReactElement } from 'react';
+// Types
+import type { NextPageWithLayout } from "next";
+
+// React
+import React, { ReactElement } from "react";
+
+// Material UI
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Paper from "@mui/material/Paper";
+
+// Utilities
+import Layout from "components/utilities/Layout";
 
 const Landing: NextPageWithLayout = () => {
 	return (
-		<div>
-			<div>
-				<div>Gible - NextJS and Material UI</div>
-			</div>
-		</div>
+		<Box>
+			<Container maxWidth='xl'>
+				<Paper
+					elevation={2}
+					sx={{
+						display: "flex",
+						flexDirection: "column",
+						alignItems: "center",
+						justifyContent: "center",
+						width: "250px",
+						margin: "auto",
+						padding: "10px"
+					}}>
+					<Typography>Gible - NextJS with Material UI</Typography>
+				</Paper>
+			</Container>
+		</Box>
 	);
 };
 
