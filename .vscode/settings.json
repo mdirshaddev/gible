@@ -6,20 +6,61 @@
 	"editor.fontLigatures": true,
 	"editor.fontFamily": "'FiraCode Nerd Font Mono', Consolas, 'Courier New', monospace",
 	"editor.tabSize": 2,
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnPaste": true,
+		"editor.formatOnSave": true,
+		"editor.formatOnType": true
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnPaste": true,
+		"editor.formatOnSave": true,
+		"editor.formatOnType": true
+	},
+	"[css]": {
+		"editor.suggest.insertMode": "replace",
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnPaste": true,
+		"editor.formatOnSave": true,
+		"editor.formatOnType": true
+	},
+	"[jsonc]": {
+		"editor.quickSuggestions": {
+			"strings": true
+		},
+		"editor.suggest.insertMode": "replace",
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnPaste": true,
+		"editor.formatOnSave": true,
+		"editor.formatOnType": true
+	},
+	"[json]": {
+		"editor.quickSuggestions": {
+			"strings": true
+		},
+		"editor.suggest.insertMode": "replace",
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnPaste": true,
+		"editor.formatOnSave": true,
+		"editor.formatOnType": true
+	},
+	// TODO: for all required file types need to be added here
 	// File
 	"files.eol": "\n",
-  //************ Extensions Config ************//
-  // prettier
-  "prettier.enable": true,
-  "prettier.arrowParens": "avoid",
-  "prettier.bracketSameLine": true,
-  "prettier.bracketSpacing": true,
-  "prettier.endOfLine": "lf",
-  "prettier.jsxSingleQuote": true,
-  "prettier.semi": true,
-  "prettier.trailingComma": "none",
-  "prettier.tabWidth": 2,
-  "prettier.singleQuote": false,
-  "prettier.useTabs": true,
-  "prettier.ignorePath": ".prettierignore"
+	//************ Extensions Config ************//
+	// prettier
+	"prettier.enable": true,
+	"prettier.arrowParens": "avoid",
+	"prettier.bracketSameLine": true,
+	"prettier.bracketSpacing": true,
+	"prettier.endOfLine": "lf",
+	"prettier.jsxSingleQuote": true,
+	"prettier.semi": true,
+	"prettier.trailingComma": "none",
+	"prettier.tabWidth": 2,
+	"prettier.singleQuote": false,
+	"prettier.useTabs": true,
+	"prettier.ignorePath": ".prettierignore"
+	// TODO: eslint config needs to be added
 }
