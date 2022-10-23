@@ -45,7 +45,7 @@ const Header = styled("header")(({ theme }) => [
 		backdropFilter: "blur(20px)",
 		boxShadow: `inset 0px -1px 1px ${grey[800]}`,
 		backgroundColor:
-			theme.palette.mode === "dark"
+			theme.palette.mode === "light"
 				? "rgba(255, 255, 255, 0.72)"
 				: "rgba(10, 25, 41, 0.72)"
 	}

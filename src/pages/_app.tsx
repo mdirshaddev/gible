@@ -11,6 +11,10 @@ import "@fontsource/roboto/700.css";
 import { Fragment } from "react";
 import { AppProps } from "next/app";
 
+// React Query
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
 // Material UI
 import { ThemeProvider } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -31,22 +35,28 @@ function App({
 	pageProps,
 	emotionCache = clientSideEmotionCache
 }: AppProps) {
+	// React Query client
+	const client = new QueryClient();
+
 	// Use the layout defined at the page level, if available
 	const getLayout = Component.getLayout ?? (page => page);
 	// TODO: Need a loader for page transitions
 	// TODO: Need a progress bar for the page when is loading show a loadinf effect for better eexperience
 	return getLayout(
 		<Fragment>
-			<CacheProvider value={emotionCache}>
-				<HeadMetaTag />
-				{/* <CssVarsProvider theme={theme}> */}
-				<ThemeProvider theme={theme}>
-					{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-					<CssBaseline />
-					<Component {...pageProps} />
-				</ThemeProvider>
-				{/* </CssVarsProvider> */}
-			</CacheProvider>
+			<QueryClientProvider client={client}>
+				<CacheProvider value={emotionCache}>
+					<HeadMetaTag />
+					{/* <CssVarsProvider theme={theme}> */}
+					<ThemeProvider theme={theme}>
+						{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+						<CssBaseline />
+						<ReactQueryDevtools initialIsOpen={true} />
+						<Component {...pageProps} />
+					</ThemeProvider>
+					{/* </CssVarsProvider> */}
+				</CacheProvider>
+			</QueryClientProvider>
 		</Fragment>
 	);
 }

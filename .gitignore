@@ -3,3 +3,10 @@ node_modules
 
 # next
 .next
+
+# env file
+.env
+.env.*
+
+# graphql generated
+src/generated
