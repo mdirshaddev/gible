@@ -1,11 +1,18 @@
-import Image from 'next/image';
-import { FC, Fragment } from 'react';
-import { IChildProps } from 'types/react';
+// Types
+import { IChildProps } from "types/react";
+
+// React
+import { FC, Fragment } from "react";
+
+// Components
+import ElevateAppBar from "components/NavBar";
 
 const Layout: FC<IChildProps> = (props): JSX.Element => {
 	return (
 		<Fragment>
-			<div>{props.children}</div>
+			<ElevateAppBar>
+				<div>{props.children}</div>
+			</ElevateAppBar>
 		</Fragment>
 	);
 };
