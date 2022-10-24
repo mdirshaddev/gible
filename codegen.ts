@@ -2,10 +2,10 @@ import type { CodegenConfig } from "@graphql-codegen/cli";
 
 const config: CodegenConfig = {
 	overwrite: true,
-	schema: "https://api.github.com/graphql",
+	schema: process.env.NEXT_PUBLIC_GITHUB_GRAPHQL_API,
 	config: {
 		headers: {
-			Authorization: `Bearer ${process.env.GITHUB_SECRET_TOKEN}`
+			Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_SECRET_TOKEN}`
 		}
 	},
 	documents: ["src/graphql/**/*.graphql"],
@@ -17,8 +17,16 @@ const config: CodegenConfig = {
 				"typescript-react-query"
 			],
 			config: {
-				fetcher: "graphql-request",
-				isReactHook: true
+				fetcher: {
+					endpoint: process.env.NEXT_PUBLIC_GITHUB_GRAPHQL_API,
+					fetchParams: {
+						headers: {
+							Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_SECRET_TOKEN}`
+						}
+					}
+				},
+				isReactHook: true,
+				writeHooks: true
 			}
 		},
 		"./graphql.schema.json": {
