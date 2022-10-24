@@ -18,7 +18,12 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 // Material UI
 import { ThemeProvider } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
+
+// Emotion
 import { CacheProvider, EmotionCache } from "@emotion/react";
+
+// Framer Motion
+import { AnimatePresence } from "framer-motion";
 
 // Utilities
 import HeadMetaTag from "components/utilities/MetaTag";
@@ -44,19 +49,21 @@ function App({
 	// TODO: Need a progress bar for the page when is loading show a loadinf effect for better eexperience
 	return getLayout(
 		<Fragment>
-			<QueryClientProvider client={client}>
-				<CacheProvider value={emotionCache}>
-					<HeadMetaTag />
-					{/* <CssVarsProvider theme={theme}> */}
-					<ThemeProvider theme={theme}>
-						{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-						<CssBaseline />
-						<ReactQueryDevtools initialIsOpen={true} />
-						<Component {...pageProps} />
-					</ThemeProvider>
-					{/* </CssVarsProvider> */}
-				</CacheProvider>
-			</QueryClientProvider>
+			<AnimatePresence onExitComplete={() => window.scrollTo(0, 0)}>
+				<QueryClientProvider client={client}>
+					<CacheProvider value={emotionCache}>
+						<HeadMetaTag />
+						{/* <CssVarsProvider theme={theme}> */}
+						<ThemeProvider theme={theme}>
+							{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+							<CssBaseline />
+							<ReactQueryDevtools initialIsOpen={true} />
+							<Component {...pageProps} />
+						</ThemeProvider>
+						{/* </CssVarsProvider> */}
+					</CacheProvider>
+				</QueryClientProvider>
+			</AnimatePresence>
 		</Fragment>
 	);
 }

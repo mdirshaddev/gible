@@ -293,7 +293,7 @@ export default function ElevateAppBar(props: MuiProps): JSX.Element {
 								<StyledNextMuiButton variant='text' href='/'>
 									<StyledNavTypography>Dashboard</StyledNavTypography>
 								</StyledNextMuiButton>
-								<StyledNextMuiButton variant='text' href='/'>
+								<StyledNextMuiButton variant='text' href='/docs'>
 									<StyledNavTypography>Docs</StyledNavTypography>
 								</StyledNextMuiButton>
 								<StyledNextMuiButton variant='text' href='/'>
